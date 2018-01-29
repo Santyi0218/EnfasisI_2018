@@ -1,0 +1,70 @@
+La Línea de Comandos
+Existen muchas formas de usar Git. Por un lado tenemos las herramientas originales de línea de comandos, y por otro lado tenemos una gran variedad de interfaces de usuario con distintas capacidades. La línea de comandos en el único lugar en donde puedes ejecutar todos los comandos de Git - la mayoría de interfaces gráficas de usuario solo implementan una parte de las características de Git por motivos de simplicidad. Si tú sabes cómo realizar algo desde la línea de comandos, seguramente serás capaz de averiguar cómo hacer lo mismo desde una interfaz gráfica. Sin embargo, la relación opuesta no es necesariamente cierta. Así mismo, la decisión de qué cliente gráfico utilizar depende totalmente de tu gusto, pero todos los usuarios tendrán las herramientas de línea de comandos instaladas y disponibles.
+
+Espero que sepas cómo abrir el Terminal en Mac o Linux, el "Command Prompt" o "Powershell" en Windows. Si no entiendes de lo que estamos hablando aquí, te recomendamos que hagas una pausa para investigar acerca de esto de tal forma que puedas entender el resto de las explicaciones y descripciones que siguen en este libro.
+
+git --version
+git config --global user.name "nombre"
+git config --global user.mail "mail"
+---------------------------------------
+¿Cómo obtener ayuda?
+Si alguna vez necesitas ayuda usando Git, existen tres formas de ver la página del manual (manpage) para cualquier comando de Git:
+
+git help <verb>
+git <verb> --help
+man git-<verb>
+
+Por ejemplo, puedes ver la página del manual para el comando config ejecutando
+
+$ git help config
+
+---------------------------------------
+CREACION DE REPOSITORIO
+-Repositorio vacío
+    git init
+-Repositorio existente
+    git clone identificador pathDestino
+
+----------------------------------------
+VERSIONES EXISTENTES
+-Ver historial de commits
+    git log
+-Ver diferencias entre archivos de los commits
+    git diff commit_id commit_id
+-----------------------------------------
+AÑADIR ARCHIVOS AL AREA DE PREPARACION
+-Añadir solo un archivo
+    git add nombre_archivo
+
+-Añadir todo archivo en el directorio
+    git add .
+
+-----------------------------------------
+EJECUTAR UN COMMIT
+    git commit -m "mensaje del commit"
+
+------------------------------------------
+VOLVER A UNA VERSION INDICADA
+    git checkout commit_id
+
+    git tag -a nombreEtiqueta -m ""
+    ejm:] git checkout nombreEtiqueta
+------------------------------------------
+VERIFICAR ESTADO DEL REPOSITORIO
+    git status
+
+------------------------------------------
+RAMAS
+-Creacion de una rama
+    git branch nombreRama
+
+-Cambiar de rama
+    git checkout nombreRamaDestino
+    *Es necesario hacer commit en ramaOrigen
+
+-Unir contenido de ramas
+    git merge nombreRama_aUnir
+    * Realizar desde rama destino
+
+-Listar ramas existentes
+    git branch
